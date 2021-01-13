@@ -8,7 +8,7 @@ package leetcode.editor.cn.entity;
  **/
 public class UnionSet {
     private int[] parent;
-    private int[] rank;
+    private int[] rank;//test
 
     public UnionSet(int n){
         parent = new int[n];
