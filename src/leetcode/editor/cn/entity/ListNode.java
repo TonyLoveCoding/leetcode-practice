@@ -31,4 +31,32 @@ public class ListNode {
         }
         return sb.toString();
     }
+
+    public ListNode getMidNode(ListNode head){
+        if(head == null || head.next == null) return head;
+        ListNode fast = head, slow = head;
+        while(fast != null && fast.next != null){
+            fast = fast.next.next;
+            slow = slow.next;
+        }
+        return slow;
+    }
+
+    public ListNode revert(ListNode revertTail){
+        if(revertTail == null || revertTail.next == null) return revertTail;
+        ListNode p = revertTail, pre = null;
+        while(p.next != null){
+            ListNode temp = p.next;
+            p.next = pre;
+            pre = p;
+            p = temp;
+        }
+        p.next = pre;
+        return p;
+    }
+
+    @Override
+    public String toString() {
+        return "val=" + val + ", next=" + next;
+    }
 }
